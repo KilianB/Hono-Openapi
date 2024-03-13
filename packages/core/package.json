@@ -1,0 +1,56 @@
+{
+  "name": "@hono-openapi/core",
+  "main": "./dist/index.js",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Drop in zero configuration extension for Hono with openapi schema generation. Core package",
+  "keywords": [
+    "Hono",
+    "OpenApi",
+    "Scalar",
+    "SwaggerUi",
+    "Swagger",
+    "Documentation",
+    "Bun"
+  ],
+  "author": {
+    "name": "Kilian Brachtendorf",
+    "email": "kilian@brachtendorf.dev"
+  },
+  "repository": {
+    "url": "https://github.com/KilianB/Hono-Openapi.git",
+    "type": "git"
+  },
+  "exports": {
+    "bun": "./dist/index.js",
+    "node": "./dist/cjs/index.js",
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json",
+    "dev": "bun run --hot src/testWebserver.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "hono": "^4.0.4",
+    "@types/lodash.ismatchwith": "^4.4.9",
+    "@hono-openapi/shared": "workspace:*",
+    "json-schema": "^0.4.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "hono": "^4.0.4",
+    "@hono-openapi/swaggerui": "workspace:*"
+  },
+  "dependencies": {
+    "yaml": "^2.4.1",
+    "openapi3-ts": "^4.2.1",
+    "@hono-openapi/scalar": "workspace:*",
+    "@sinclair/typebox": "^0.32.0",
+    "@openapi-contrib/json-schema-to-openapi-schema": "3.0.1",
+    "lodash.ismatchwith": "4.4.0"
+  }
+}

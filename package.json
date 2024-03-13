@@ -1,0 +1,37 @@
+{
+  "name": "hono-openapi",
+  "module": "index.ts",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Drop in zero configuration extension for Hono with openapi schema generation",
+  "keywords": [
+    "Hono",
+    "OpenApi",
+    "Scalar",
+    "SwaggerUi",
+    "Swagger",
+    "Documentation",
+    "Bun"
+  ],
+  "private": true,
+  "author": {
+    "name": "Kilian Brachtendorf",
+    "email": "kilian@brachtendorf.dev"
+  },
+  "repository": {
+    "url": "https://github.com/KilianB/Hono-Openapi.git",
+    "type": "git"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun --hot run packages/core/src/testWebserver.ts",
+    "build": "bun run build:shared && bun run build:scalar && bun run build:swagger  && bun run build:core",
+    "build:shared": "cd ./packages/shared && bun run build && cd ../..",
+    "build:core": "cd ./packages/core && bun run build && cd ../..",
+    "build:scalar": "cd ./packages/scalar && bun run build  && cd ../..",
+    "build:swagger": "cd ./packages/swaggerui && bun run build && cd ../.."
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

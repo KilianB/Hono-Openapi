@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: OpenApi Spec
+  version: 0.0.0
+components:
+  schemas:
+    LocationResponse:
+      type: object
+      properties:
+        lat:
+          example: 50.93
+          type: number
+        lng:
+          example: 6.95
+          type: number
+        name:
+          example: Cologne
+          type: string
+        locode:
+          example: DE CGN
+          type: string
+      required:
+        - lat
+        - lng
+        - name
+        - locode
+paths:
+  /location:
+    post:
+      description: My Foo
+      operationId: postLocation
+      parameters: []
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationResponse"
+                x-openapi-sample-count: 1
+  /saveDoc:
+    get:
+      operationId: getSaveDoc
+      parameters: []
+      responses: {}

@@ -1,0 +1,6 @@
+{
+  "cSpell.words": ["Hono", "openapi", "typebox"],
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@hono-openapi/scalar",
+  "main": "./dist/index.js",
+  "version": "0.0.1",
+  "description": "Drop in zero configuration extension for Hono with openapi schema generation. Scalar frontend",
+  "keywords": [
+    "Hono",
+    "OpenApi",
+    "Scalar",
+    "SwaggerUi",
+    "Swagger",
+    "Documentation",
+    "Bun"
+  ],
+  "author": {
+    "name": "Kilian Brachtendorf",
+    "email": "kilian@brachtendorf.dev"
+  },
+  "repository": {
+    "url": "https://github.com/KilianB/Hono-Openapi.git",
+    "type": "git"
+  },
+  "exports": {
+    "bun": "./dist/index.js",
+    "node": "./dist/cjs/index.js",
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@hono-openapi/shared": "workspace:*",
+    "@scalar/api-reference": "^1.16.2",
+    "rimraf": "5.0.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
